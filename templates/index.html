@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify to MP3 + Lyrics</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header>
+        <h1>Spotify to MP3</h1>
+        <p>Convert Spotify tracks to MP3 and fetch lyrics.</p>
+      </header>
+
+      <main>
+        <section class="card">
+          <label for="spotifyUrl">Spotify Track URL</label>
+          <input id="spotifyUrl" placeholder="https://open.spotify.com/track/..." />
+          <button id="convertButton">Convert to MP3</button>
+          <div id="status" class="status"></div>
+        </section>
+
+        <section class="card" id="resultCard" hidden>
+          <h2>Conversion Result</h2>
+          <p><strong>Artist:</strong> <span id="artist"></span></p>
+          <p><strong>Track:</strong> <span id="track"></span></p>
+          <p><a id="downloadLink" class="download-link" href="#" target="_blank">Download MP3</a></p>
+          <div class="lyrics-panel">
+            <h3>Lyrics</h3>
+            <pre id="lyrics"></pre>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>Requires Spotify track URL and an accessible Spotify download backend.</p>
+      </footer>
+    </div>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
